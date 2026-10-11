@@ -1,17 +1,16 @@
-root {
+:root {
   --bg: #f5f5f5;
   --card-bg: #ffffff;
   --text: #333;
   --accent: #0ba184;
-  --warning: #d00000;
+  --warning: orange;
+  --over: red;
 }
-
 .dark {
   --bg: #121212;
   --card-bg: #1e1e1e;
   --text: #f5f5f5;
 }
-
 * { box-sizing: border-box; }
 body {
   background: var(--bg);
@@ -20,22 +19,13 @@ body {
   margin: 0;
   transition: background 0.3s, color 0.3s;
 }
-
 header {
   background-color: #8e0000;
   color: white;
   text-align: center;
   padding: 24px 16px;
 }
-header nav a {
-  color: white;
-  text-decoration: none;
-  padding: 6px 10px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-
+header nav a { color: white; text-decoration: none; padding: 6px 10px; }
 main { max-width: 800px; margin: 20px auto; padding: 0 15px; }
 section {
   background: var(--card-bg);
@@ -44,7 +34,6 @@ section {
   border-radius: 10px;
   margin-bottom: 20px;
 }
-
 #notes-list li {
   padding: 12px 16px;
   margin-bottom: 10px;
@@ -55,37 +44,24 @@ section {
   display: flex;
   justify-content: space-between;
 }
+.dark #notes-list li { background: #2a2a2a; }
 button {
   background-color: #0ba184;
   color: white;
   border: none;
   padding: 10px 18px;
   border-radius: 6px;
-  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
-
-button:hover {
-  background-color: #088a70;
-}
-
-
-.dark #notes-list li { background: #2a2a2a; }
-
-.stats { font-size: 0.9rem; margin: 10px 0; }
-#warning { color: var(--warning); font-weight: bold; }
-
+#charCount.warning { color: var(--warning); font-weight: bold; }
+#charCount.over { color: var(--over); font-weight: bold; }
 form { display: flex; flex-direction: column; gap: 10px; }
 form textarea {
   width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px;
   background: var(--card-bg); color: var(--text);
 }
-
 footer { text-align: center; color: #777; padding: 16px; }
-
 @media (max-width: 600px) {
   header h1 { font-size: 1.5rem; }
-  header { padding: 16px; }
   nav { flex-direction: column; align-items: center; display: flex; gap: 8px; }
 }
