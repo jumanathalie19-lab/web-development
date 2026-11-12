@@ -1,0 +1,7 @@
+# Reflection
+
+**The most difficult concept.** The hardest idea for me was concurrency: how two requests arriving at the same moment can both pass a check and break the data. When I first thought about "check if the seat is free, then reserve it", it seemed obviously correct. I overcame it by drawing a timeline of two users on paper and marking exactly where each request read and wrote. That showed the gap between the check and the update. Once I saw it, the fix made sense: let the database check and change the row in one atomic step, and add a `UNIQUE` constraint as a safety net. Working through the TicketHub double-booking problem made the idea concrete.
+
+**What I would improve in my capstone.** The feedback I received was that my architecture explanation named the components but moved quickly past the reason for each one, and that I did not show enough of the system working. I would improve it by tying every box in the diagram to a specific problem and a number from my estimates, for example "600 peak reads per second is why I added a cache". I would also show the request in the Network tab when creating a note, so the audience can see the API doing real work.
+
+**What I will learn next.** I want to build a real backend with Node.js and Express and connect it to PostgreSQL, so that my QuickNotes API design becomes working code. After that I will learn React to build larger interfaces from reusable components, and keep practising system design with the System Design Primer.
